@@ -9,8 +9,8 @@ namespace WebAPI_ECommerceSystem.Entities
         public int Id { get; set; }
 
         [Required]
-        //[Column(TypeName = "nvarchar(50)")] //Fix me!
-        public int ArticleNumber { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string ArticleNumber { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(50)")]
@@ -28,14 +28,4 @@ namespace WebAPI_ECommerceSystem.Entities
         public int ProductCategoryEntityId { get; set; }
     }
 
-    public class ProductCategoryEntity
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [Column(TypeName = "nvarchar(50)" )]
-        public string Name { get; set; }
-        public ICollection<ProductEntity> Products { get; set; }
-    }
 }

@@ -23,17 +23,6 @@ namespace WebAPI_ECommerceSystem.Entities
         public AddressEntity Address { get; set; }
         public IEnumerable<OrderRowEntity> OrderRows { get; set; }
     }
-
-    public class OrderRowEntity
-    {
-        [Key]
-        public int Id { get; set; }
-        [Required]
-        public int Amount { get; set; }
-        public ProductEntity Product { get; set; }
-        public int ProductEntityId { get; set; }
-    }
-
     public enum OrderStatus
     {
         New,
