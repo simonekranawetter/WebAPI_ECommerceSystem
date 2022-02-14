@@ -13,7 +13,7 @@ namespace WebAPI_ECommerceSystem.Entities
         public string Street { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "nvarchar(10)")]
         public string PostalCode { get; set; }
 
         [Required]

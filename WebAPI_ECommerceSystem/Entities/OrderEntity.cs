@@ -13,14 +13,31 @@ namespace WebAPI_ECommerceSystem.Entities
         public string Name { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(50)")]
+        //[Column(TypeName = "Date")] //Fix me?!
         public DateTime OrderDate { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(50)")]
+        //[Column(TypeName = "nvarchar(50)")]
         public OrderStatus Status { get; set; }
 
+        public AddressEntity Address { get; set; }
+        public IEnumerable<OrderRowEntity> OrderRows { get; set; }
+    }
 
+    public class OrderRowEntity
+    {
+        [Key]
+        public int Id { get; set; }
+        [Required]
+        public int Amount { get; set; }
+        public ProductEntity Product { get; set; }
+        public int ProductEntityId { get; set; }
+    }
 
+    public enum OrderStatus
+    {
+        New,
+        Shipped,
+        Delivered
     }
 }
