@@ -13,11 +13,9 @@ namespace WebAPI_ECommerceSystem.Entities
         public string Name { get; set; }
 
         [Required]
-        //[Column(TypeName = "Date")] //Fix me?!
         public DateTime OrderDate { get; set; }
 
         [Required]
-        //[Column(TypeName = "nvarchar(50)")]
         public OrderStatus Status { get; set; }
 
         public AddressEntity Address { get; set; }
