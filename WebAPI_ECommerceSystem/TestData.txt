@@ -1,0 +1,16 @@
+﻿{
+  "firstName": "Bruce",
+  "lastName": "Wayne",
+  "email": "totallynotbatman@gotham.gov",
+  "password": "P@ssw0rd1",
+  "phone": "090087969534",
+  "mobile": "090707005504",
+  "street": "Batcave 1",
+  "postalCode": "065 56",
+  "city": "Gotham"
+}
+
+{
+  "email": "totallynotbatman@gotham.gov",
+  "password": "P@ssw0rd1"
+}

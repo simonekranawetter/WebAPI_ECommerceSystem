@@ -67,7 +67,7 @@ namespace WebAPI_ECommerceSystem.Controllers
         }
 
         [HttpPost(Name ="AddUser")]
-        [Authorize]
+       // [Authorize]
         public async Task<ActionResult<UserDto>> AddUser(AddUserDto user)
         {
             if (await _context.Users.AnyAsync(u => u.Email == user.Email))
