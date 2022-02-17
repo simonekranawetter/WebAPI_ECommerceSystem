@@ -12,8 +12,8 @@ using WebAPI_ECommerceSystem;
 namespace WebAPI_ECommerceSystem.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220215142747_init version2")]
-    partial class initversion2
+    [Migration("20220217105954_order entity changed")]
+    partial class orderentitychanged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,7 +57,7 @@ namespace WebAPI_ECommerceSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AddressId")
+                    b.Property<int>("AddressEntityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -72,7 +72,7 @@ namespace WebAPI_ECommerceSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
+                    b.HasIndex("AddressEntityId");
 
                     b.ToTable("Orders");
                 });
@@ -203,7 +203,7 @@ namespace WebAPI_ECommerceSystem.Migrations
                 {
                     b.HasOne("WebAPI_ECommerceSystem.Entities.AddressEntity", "Address")
                         .WithMany("Orders")
-                        .HasForeignKey("AddressId")
+                        .HasForeignKey("AddressEntityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

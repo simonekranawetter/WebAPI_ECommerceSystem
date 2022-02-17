@@ -55,7 +55,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if(userEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             var userDto = new UserDto
             {
@@ -67,7 +67,6 @@ namespace WebAPI_ECommerceSystem.Controllers
         }
 
         [HttpPost(Name ="AddUser")]
-       // [Authorize]
         public async Task<ActionResult<UserDto>> AddUser(AddUserDto user)
         {
             if (await _context.Users.AnyAsync(u => u.Email == user.Email))
@@ -142,7 +141,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if(userEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             userEntity.FirstName = user.FirstName;
@@ -161,7 +160,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if(userEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             _context.Users.Remove(userEntity);
             await _context.SaveChangesAsync();

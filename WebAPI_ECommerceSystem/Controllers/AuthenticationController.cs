@@ -32,7 +32,7 @@ namespace WebAPI_ECommerceSystem.Controllers
         {
             if(string.IsNullOrEmpty(signInDto.Email) || string.IsNullOrEmpty(signInDto.Password))
             {
-                return BadRequest();
+                return BadRequest("Email and Password must be provided");
             }
             var userEntity = await _context.Users.FirstOrDefaultAsync(x => x.Email == signInDto.Email);
 
@@ -49,7 +49,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if (userEntity == null || !validPassword)
             {
-                return BadRequest("Incorrect email address or password");
+                return BadRequest("Incorrect Email or Password");
             }
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenDescriptor = new SecurityTokenDescriptor

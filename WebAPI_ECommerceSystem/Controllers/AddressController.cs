@@ -30,7 +30,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if (userEntity == null || userEntity.Address == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             var addressDto = new AddressDto
@@ -50,7 +50,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if (userEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             var addressEntity = await _context.Addresses.FirstOrDefaultAsync(a => a.Street == address.Street && a.PostalCode == address.PostalCode && a.City == address.City);

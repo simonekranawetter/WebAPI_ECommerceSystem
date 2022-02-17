@@ -19,6 +19,7 @@ namespace WebAPI_ECommerceSystem.Entities
         public OrderStatus Status { get; set; }
 
         public AddressEntity Address { get; set; }
+        public int AddressEntityId { get; set; }
         public IEnumerable<OrderRowEntity> OrderRows { get; set; }
     }
     public enum OrderStatus

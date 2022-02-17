@@ -59,7 +59,7 @@ namespace WebAPI_ECommerceSystem.Controllers
 
             if (productEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             var productDto = new ProductDto
             {
@@ -75,7 +75,7 @@ namespace WebAPI_ECommerceSystem.Controllers
         }
         
         [HttpPost(Name = "AddProduct")]
-        [UseApiKey]
+        [UseAdminKey]
         public async Task<ActionResult<ProductDto>> AddProduct(AddProductDto addProductDto)
         {
             if(await _context.Products.AnyAsync(p => p.ArticleNumber == addProductDto.ArticleNumber))
@@ -127,14 +127,14 @@ namespace WebAPI_ECommerceSystem.Controllers
         }
 
         [HttpPut("{id}")]
-        [UseApiKey]
+        [UseAdminKey]
         public async Task<ActionResult> UpdateProduct(int id, AddProductDto productDto)
         {
             var productEntity = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
 
             if (productEntity == null)
             {
-                return BadRequest();
+                return NotFound();
             }
            var productCategory = await _context.ProductCategories.FirstOrDefaultAsync(p => p.Name == productDto.Category);
 
@@ -167,7 +167,7 @@ namespace WebAPI_ECommerceSystem.Controllers
         }
 
         [HttpDelete("{id}")]
-        [UseApiKey]
+        [UseAdminKey]
         public async Task<ActionResult> DeleteProduct(int id)
         {
             var productEntity = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);

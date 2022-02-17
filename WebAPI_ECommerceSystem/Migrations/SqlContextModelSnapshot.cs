@@ -55,7 +55,7 @@ namespace WebAPI_ECommerceSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AddressId")
+                    b.Property<int>("AddressEntityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -70,7 +70,7 @@ namespace WebAPI_ECommerceSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
+                    b.HasIndex("AddressEntityId");
 
                     b.ToTable("Orders");
                 });
@@ -201,7 +201,7 @@ namespace WebAPI_ECommerceSystem.Migrations
                 {
                     b.HasOne("WebAPI_ECommerceSystem.Entities.AddressEntity", "Address")
                         .WithMany("Orders")
-                        .HasForeignKey("AddressId")
+                        .HasForeignKey("AddressEntityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

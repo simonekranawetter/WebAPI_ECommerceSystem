@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebAPI_ECommerceSystem.Migrations
 {
-    public partial class init : Migration
+    public partial class orderentitychanged : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,14 +46,14 @@ namespace WebAPI_ECommerceSystem.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    AddressId = table.Column<int>(type: "int", nullable: false)
+                    AddressEntityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Addresses_AddressId",
-                        column: x => x.AddressId,
+                        name: "FK_Orders_Addresses_AddressEntityId",
+                        column: x => x.AddressEntityId,
                         principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -145,9 +145,9 @@ namespace WebAPI_ECommerceSystem.Migrations
                 column: "ProductEntityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_AddressId",
+                name: "IX_Orders_AddressEntityId",
                 table: "Orders",
-                column: "AddressId");
+                column: "AddressEntityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductCategoryEntityId",
