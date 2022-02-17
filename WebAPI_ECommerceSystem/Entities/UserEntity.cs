@@ -21,11 +21,11 @@ namespace WebAPI_ECommerceSystem.Entities
         public string Email { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string Phone { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string Mobile { get; set; }
 
         [Required]

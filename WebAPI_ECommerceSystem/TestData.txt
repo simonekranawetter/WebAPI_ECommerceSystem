@@ -11,6 +11,54 @@
 }
 
 {
+  "firstName": "Dick",
+  "lastName": "Grayson",
+  "email": "nightwingissupercool@gotham.gov",
+  "password": "P@ssw0rd1",
+  "phone": "090087969534",
+  "mobile": "090707005504",
+  "street": "Batcave 1",
+  "postalCode": "065 56",
+  "city": "Gotham"
+}
+
+
+{
   "email": "totallynotbatman@gotham.gov",
   "password": "P@ssw0rd1"
+}
+
+{
+  "articleNumber": 3,
+  "name": "Batarang",
+  "description": "A bat-shaped throwing weapon."
+  "price": 300,
+  "category": "Gadgets"
+}
+
+{
+  "articleNumber": 40,
+  "name": "Batmobile",
+  "description": "A heavily armored tactical assault vehicle."
+  "price": 50000,
+  "category": "Vehicles"
+}
+
+{
+  "name": "Bruce Wayne",
+  "address": {
+	"street": "Batcave 1",
+	"postalCode": "065 56",
+	"city": "Gotham"
+  },
+  "orderRows": [
+    {
+	  "amount": 20,
+	  "articleNumber": 3
+    },
+	{
+	  "amount": 1,
+	  "articleNumber": 40
+	}
+  ]
 }
