@@ -43,4 +43,4 @@ The API should be secured with the help of a key so only users with the key can 
 - Verification with data annotations on DTOs
 
 
-Due to time constraints mapping has not been implemented with leads to some repeat code.
+Due to time constraints mapping has not been implemented which leads to some repeat code.
