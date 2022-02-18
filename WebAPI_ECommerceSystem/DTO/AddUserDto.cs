@@ -25,13 +25,13 @@ namespace WebAPI_ECommerceSystem.DTO
 
         [Required]
         [StringLength(50, MinimumLength =2)]
-        [RegularExpression(@"\+?\d", ErrorMessage = "Must be a valid password.")]
+        [RegularExpression(@"\+?\d{2,}", ErrorMessage = "Must be a valid number.")]
 
         public string Phone { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength =2)]
-        [RegularExpression(@"\+?\d", ErrorMessage = "Must be a valid password.")]
+        [RegularExpression(@"\+?\d{2,}", ErrorMessage = "Must be a valid number.")]
 
         public string Mobile { get; set; }
 
@@ -41,7 +41,7 @@ namespace WebAPI_ECommerceSystem.DTO
 
         [Required]
         [StringLength (10, MinimumLength = 5)]
-        [RegularExpression(@"/s?/d{3}/s?/d{2}$", ErrorMessage ="Must be a valid postal code")]
+        [RegularExpression(@"^\d{3}(?:[ ]?\d{2})?$", ErrorMessage ="Must be a valid postal code.")]
         public string PostalCode { get; set; }
 
         [Required]

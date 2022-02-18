@@ -10,7 +10,9 @@ namespace WebAPI_ECommerceSystem.Filters
             var classAttributes = context?.MethodInfo?.DeclaringType?.CustomAttributes.Where(a => a.AttributeType == typeof(UseApiKeyAttribute)).FirstOrDefault();
             var methodAttributes = context?.MethodInfo.GetCustomAttributes(true).OfType<UseApiKeyAttribute>().FirstOrDefault();
 
-            if (methodAttributes != null || classAttributes != null)
+            var adminMethodAttributes = context?.MethodInfo.GetCustomAttributes(true).OfType<UseAdminKeyAttribute>().FirstOrDefault();
+
+            if (methodAttributes != null || classAttributes != null || adminMethodAttributes != null)
             {
                 if(operation.Parameters == null)
                 {

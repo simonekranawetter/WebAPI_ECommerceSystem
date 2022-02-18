@@ -29,17 +29,17 @@
 }
 
 {
-  "articleNumber": 3,
+  "articleNumber": "3",
   "name": "Batarang",
-  "description": "A bat-shaped throwing weapon."
+  "description": "A bat-shaped throwing weapon.",
   "price": 300,
   "category": "Gadgets"
 }
 
 {
-  "articleNumber": 40,
+  "articleNumber": "40",
   "name": "Batmobile",
-  "description": "A heavily armored tactical assault vehicle."
+  "description": "A heavily armored tactical assault vehicle.",
   "price": 50000,
   "category": "Vehicles"
 }
@@ -54,11 +54,11 @@
   "orderRows": [
     {
 	  "amount": 20,
-	  "articleNumber": 3
+	  "articleNumber": "3"
     },
 	{
 	  "amount": 1,
-	  "articleNumber": 40
+	  "articleNumber": "40"
 	}
   ]
 }

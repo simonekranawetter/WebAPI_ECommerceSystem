@@ -5,7 +5,7 @@ namespace WebAPI_ECommerceSystem.DTO
     public class AddProductDto
     {
         [Required]
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(50)]
         public string ArticleNumber { get; set; }
 
         [Required]

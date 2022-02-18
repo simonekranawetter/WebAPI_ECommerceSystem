@@ -63,7 +63,7 @@ namespace WebAPI_ECommerceSystem.Controllers
             }
             var productDto = new ProductDto
             {
-                Id = productEntity.Id,
+                Id = id,
                 ArticleNumber = productEntity.ArticleNumber,
                 Name = productEntity.Name,
                 Description = productEntity.Description,
@@ -118,6 +118,7 @@ namespace WebAPI_ECommerceSystem.Controllers
             {
                 Id = productEntity.Id,
                 ArticleNumber = productEntity.ArticleNumber,
+                Name = productEntity.Name,
                 Description = productEntity.Description,
                 Price = productEntity.Price,
                 Category = productEntity.Category.Name
