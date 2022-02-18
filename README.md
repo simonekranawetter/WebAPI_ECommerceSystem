@@ -41,4 +41,6 @@ The API should be secured with the help of a key so only users with the key can 
 ## Features implemented that were not required
 
 - Verification with data annotations on DTOs
+
+
 Due to time constraints mapping has not been implemented with leads to some repeat code.
